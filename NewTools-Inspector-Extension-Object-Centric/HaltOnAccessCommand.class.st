@@ -11,5 +11,5 @@ HaltOnAccessCommand class >> defaultCommandName [
 
 { #category : #hooks }
 HaltOnAccessCommand >> execute [
-	self haltOnAccess: #access
+	self haltOnAccess: #all
 ]

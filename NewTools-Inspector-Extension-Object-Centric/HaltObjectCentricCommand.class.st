@@ -9,11 +9,8 @@ HaltObjectCentricCommand >> haltOnAccess: access [
 	| object variable |
 	object := self hostObject.
 	variable := self selectedKey asSymbol.
-	Transcript clear.
-	variable
-		ifNil: [ ('Halt On ' , access , ' on ' , object printString) crLog ].
-	('Halt On ' , access , ' on ' , variable printString , ' for '
-		, object printString) crLog
+	variable ifNil: [ object haltOnAccess: access ].
+	object haltOnAccess: access to: variable
 ]
 
 { #category : #breakpoints }
@@ -21,10 +18,8 @@ HaltObjectCentricCommand >> haltOnCall [
 	| object method |
 	object := self hostObject.
 	method := self selectedValue.
-	Transcript clear.
-	method ifNil: [ ('Halt On Call on ' , object printString) crLog ].
-	('Halt On Call on ' , method printString , ' for '
-		, object printString) crLog
+	method ifNil: [ ^ object breakOnCall ].
+	object breakOnCall: method selector asSymbol
 ]
 
 { #category : #accessing }
