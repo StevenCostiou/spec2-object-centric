@@ -6,7 +6,7 @@ Class {
 
 { #category : #accessing }
 HaltObjectCentricCommand >> hostObject [
-	^ self context owner owner inspectedObject
+	^ self context owner model
 ]
 
 { #category : #accessing }
