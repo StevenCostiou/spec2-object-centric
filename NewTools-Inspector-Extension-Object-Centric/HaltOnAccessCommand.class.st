@@ -11,10 +11,5 @@ HaltOnAccessCommand class >> defaultCommandName [
 
 { #category : #hooks }
 HaltOnAccessCommand >> execute [
-	| object variable |
-	variable := self selectedKey asSymbol.
-	object := self hostObject.
-	Transcript clear.
-	('Halt On Read on ' , variable printString , ' for '
-		, object printString) crLog
+	self haltOnAccess: #access
 ]

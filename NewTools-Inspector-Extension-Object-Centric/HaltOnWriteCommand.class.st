@@ -11,10 +11,5 @@ HaltOnWriteCommand class >> defaultCommandName [
 
 { #category : #hooks }
 HaltOnWriteCommand >> execute [
-	| object variable |
-	variable := self selectedKey asSymbol.
-	object := self hostObject.
-	Transcript clear.
-	('Halt On Write on ' , variable printString , ' for '
-		, object printString) crLog
+	self haltOnAccess: #write
 ]
