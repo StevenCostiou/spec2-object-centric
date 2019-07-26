@@ -10,7 +10,8 @@ HaltObjectCentricCommand >> haltOnAccess: access [
 	object := self hostObject.
 	variable := self selectedKey asSymbol.
 	variable ifNil: [ object haltOnAccess: access ].
-	object haltOnAccess: access to: variable
+	object haltOnAccess: access to: variable.
+	self context owner owner initialize
 ]
 
 { #category : #breakpoints }
@@ -19,7 +20,8 @@ HaltObjectCentricCommand >> haltOnCall [
 	object := self hostObject.
 	method := self selectedValue.
 	method ifNil: [ ^ object breakOnCall ].
-	object breakOnCall: method selector asSymbol
+	object breakOnCall: method selector asSymbol.
+	self context owner owner initialize
 ]
 
 { #category : #accessing }
