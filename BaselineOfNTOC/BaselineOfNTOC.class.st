@@ -19,13 +19,14 @@ BaselineOfNTOC >> baseline: spec [
 						repository: 'github://StevenCostiou/NewTools:Object-Centric-Integration' ].
 			spec
 				baseline: 'Avatar'
-				with: [ spec repository: 'github://StevenCostiou/avatar' ].
+				with: [ spec repository: 'github://StevenCostiou/avatar' ].			
+		spec
+				baseline: 'HaltOnStateAccess'
+				with: [ spec repository: 'github://StevenCostiou/Pharo-HaltOnStateAccess' ].
 			spec
 				baseline: 'ObjectCentricDebugger'
 				with: [ spec repository: 'github://StevenCostiou/ObjectCentricDebugger' ].
-			spec
-				baseline: 'HaltOnStateAccess'
-				with: [ spec repository: 'github://StevenCostiou/Pharo-HaltOnStateAccess' ].
+			
 			spec
 				package: 'NewTools-Inspector-Extension-Object-Centric'
 				with: [ spec repository: 'github://StevenCostiou/spec2-object-centric' ] ]
