@@ -18,8 +18,8 @@ BaselineOfNTOC >> baseline: spec [
 				with: [ spec
 						repository: 'github://StevenCostiou/NewTools:Object-Centric-Integration' ].
 			spec
-				package: 'Avatar'
-				with: [ spec repository: 'github://guillep/avatar' ].
+				baseline: 'Avatar'
+				with: [ spec repository: 'github://StevenCostiou/avatar' ].
 			spec
 				baseline: 'ObjectCentricDebugger'
 				with: [ spec repository: 'github://StevenCostiou/ObjectCentricDebugger' ].
