@@ -25,7 +25,7 @@ BaselineOfNTOC >> baseline: spec [
 				with: [ spec repository: 'github://StevenCostiou/ObjectCentricDebugger' ].
 			spec
 				baseline: 'HaltOnStateAccess'
-				with: [ spec repository: 'github://StevenCostiou/HaltOnStateAccess' ].
+				with: [ spec repository: 'github://StevenCostiou/Pharo-HaltOnStateAccess' ].
 			spec
 				package: 'NewTools-Inspector-Extension-Object-Centric'
 				with: [ spec repository: 'github://StevenCostiou/spec2-object-centric' ] ]
