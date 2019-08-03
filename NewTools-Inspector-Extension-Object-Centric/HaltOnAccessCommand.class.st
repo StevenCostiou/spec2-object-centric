@@ -6,7 +6,7 @@ Class {
 
 { #category : #default }
 HaltOnAccessCommand class >> defaultCommandName [
-	^ 'Halt on access'
+	^ 'On R/W'
 ]
 
 { #category : #hooks }

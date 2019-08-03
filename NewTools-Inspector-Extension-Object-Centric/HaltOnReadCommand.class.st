@@ -6,7 +6,7 @@ Class {
 
 { #category : #default }
 HaltOnReadCommand class >> defaultCommandName [
-	^ 'Halt on read'
+	^ 'On Read'
 ]
 
 { #category : #hooks }

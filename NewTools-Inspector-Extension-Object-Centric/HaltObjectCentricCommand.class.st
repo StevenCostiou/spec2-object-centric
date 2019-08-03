@@ -1,6 +1,9 @@
 Class {
 	#name : #HaltObjectCentricCommand,
 	#superclass : #CmCommand,
+	#classInstVars : [
+		'defaultCommandName'
+	],
 	#category : #'NewTools-Inspector-Extension-Object-Centric'
 }
 

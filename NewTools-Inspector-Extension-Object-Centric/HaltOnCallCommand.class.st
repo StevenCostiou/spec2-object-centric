@@ -6,7 +6,7 @@ Class {
 
 { #category : #default }
 HaltOnCallCommand class >> defaultCommandName [
-	^ 'Halt on call'
+	^ 'On Call'
 ]
 
 { #category : #hooks }
