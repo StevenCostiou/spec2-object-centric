@@ -11,9 +11,11 @@ Class {
 HaltObjectCentricCommand >> haltOnAccess: access [
 	| object variable |
 	object := self hostObject.
-	variable := self selectedKey asSymbol.
+	variable := [ self selectedKey asSymbol ]
+		on: Error
+		do: [ nil ].
 	variable
-		ifNil: [ object haltOnAccess: access.
+		ifNil: [ object inspectedObject haltOnAccess: access.
 			self context owner owner initialize.
 			^ self ].
 	object haltOnAccess: access to: variable.
@@ -25,7 +27,9 @@ HaltObjectCentricCommand >> haltOnCall [
 	| object method |
 	object := self hostObject.
 	method := self selectedValue.
-	method ifNil: [ ^ object breakOnCall ].
+	method
+		ifNil: [ object inspectedObject breakOnCall.
+			^ self ].
 	object breakOnCall: method selector asSymbol.
 	self context owner owner initialize
 ]
