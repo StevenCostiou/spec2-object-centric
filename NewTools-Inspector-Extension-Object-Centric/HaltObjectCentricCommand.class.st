@@ -12,7 +12,10 @@ HaltObjectCentricCommand >> haltOnAccess: access [
 	| object variable |
 	object := self hostObject.
 	variable := self selectedKey asSymbol.
-	variable ifNil: [ object haltOnAccess: access ].
+	variable
+		ifNil: [ object haltOnAccess: access.
+			self context owner owner initialize.
+			^ self ].
 	object haltOnAccess: access to: variable.
 	self context owner owner initialize
 ]
