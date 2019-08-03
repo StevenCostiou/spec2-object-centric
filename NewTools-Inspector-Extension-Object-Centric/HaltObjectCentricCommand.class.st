@@ -16,7 +16,7 @@ HaltObjectCentricCommand >> haltOnAccess: access [
 		do: [ nil ].
 	variable
 		ifNil: [ object inspectedObject haltOnAccess: access.
-			self context owner owner initialize.
+			self context initialize.
 			^ self ].
 	object haltOnAccess: access to: variable.
 	self context owner owner initialize
@@ -29,6 +29,7 @@ HaltObjectCentricCommand >> haltOnCall [
 	method := self selectedValue.
 	method
 		ifNil: [ object inspectedObject breakOnCall.
+			self context initialize.
 			^ self ].
 	object breakOnCall: method selector asSymbol.
 	self context owner owner initialize
