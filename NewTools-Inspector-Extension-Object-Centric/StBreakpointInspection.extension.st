@@ -20,3 +20,12 @@ StBreakpointInspection >> objectCentricBreakpointData [
 							data at: #target put: 'self (' , model printString , ')'.
 							data ] ])
 ]
+
+{ #category : #'*NewTools-Inspector-Extension-Object-Centric' }
+StBreakpointInspection >> printMethod: aMethod [
+	|class|
+	class := aMethod methodClass.
+	class isAnonymous ifTrue:[class := class superclass].
+	^class name, '>>', aMethod selector
+	
+]

@@ -4,3 +4,8 @@ Extension { #name : #StInspector }
 StInspector >> selectedItem [ 
 	^nil
 ]
+
+{ #category : #'*NewTools-Inspector-Extension-Object-Centric' }
+StInspector >> updateBreakpointView [
+	
+]

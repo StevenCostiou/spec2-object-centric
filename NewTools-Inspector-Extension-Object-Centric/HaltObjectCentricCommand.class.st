@@ -16,10 +16,10 @@ HaltObjectCentricCommand >> haltOnAccess: access [
 		do: [ nil ].
 	variable
 		ifNil: [ object inspectedObject haltOnAccess: access.
-			self context initialize.
+			self context refresh.
 			^ self ].
 	object haltOnAccess: access to: variable.
-	self context owner owner initialize
+	self context owner owner refresh
 ]
 
 { #category : #breakpoints }
@@ -29,10 +29,10 @@ HaltObjectCentricCommand >> haltOnCall [
 	method := self selectedValue.
 	method
 		ifNil: [ object inspectedObject breakOnCall.
-			self context initialize.
+			self context refresh.
 			^ self ].
 	object breakOnCall: method selector asSymbol.
-	self context owner owner initialize
+	self context owner owner refresh
 ]
 
 { #category : #accessing }
