@@ -18,6 +18,7 @@ StBreakpointInspection >> objectCentricBreakpointData [
 							data at: #onceOrAlways put: 'Object-Centric'.
 							data at: #interval put: (node start to: node stop).
 							data at: #target put: 'self (' , model printString , ')'.
+							data at: #breakpoint put: (BreakpointActivator on: b). 
 							data ] ])
 ]
 
